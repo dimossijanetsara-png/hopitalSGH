@@ -1,0 +1,85 @@
+====================================================================
+  SGHL MOBILE — Dépendances et Packages
+  Langage : Dart  |  Framework : Flutter
+====================================================================
+
+--- SDK FLUTTER ---
+
+flutter (sdk: flutter)
+    Framework UI multiplateforme (iOS, Android, Web, Desktop)
+    Utilisé pour : l'ensemble de l'application mobile SGHL
+
+flutter_localizations (sdk: flutter)
+    Support de la localisation et internationalisation Flutter
+    Utilisé pour : libellés en français (sélecteur de date, boutons système)
+
+flutter_test (sdk: flutter)  [dev]
+    Framework de tests unitaires et de widgets Flutter
+
+--- NAVIGATION ---
+
+go_router==13.2.0
+    Routeur déclaratif pour Flutter (navigation type URL, redirections conditionnelles)
+    Utilisé pour : protection des routes selon l'état d'authentification (JWT, MFA)
+
+--- GESTION D'ÉTAT ---
+
+flutter_riverpod==2.5.1
+    Framework de gestion d'état basé sur les Providers (StateNotifier, AsyncValue)
+    Utilisé pour : AuthNotifier, AppointmentsNotifier, état global de l'application
+
+--- RÉSEAU & API ---
+
+dio==5.4.3
+    Client HTTP avancé pour Dart
+    Utilisé pour : appels à l'API Django Ninja, intercepteurs JWT (injection du
+    token Bearer, refresh automatique à l'expiration), gestion des erreurs réseau
+
+--- STOCKAGE LOCAL ---
+
+flutter_secure_storage==9.0.0
+    Stockage chiffré sécurisé (Keychain iOS, Keystore Android)
+    Utilisé pour : access token JWT, refresh token, user_id, rôle utilisateur
+
+shared_preferences==2.2.3
+    Stockage clé-valeur simple et persistant
+    Utilisé pour : préférences non sensibles (paramètres d'affichage)
+
+--- INTERNATIONALISATION ---
+
+intl==0.20.2
+    Formatage des dates, nombres et messages selon la locale
+    Utilisé pour : affichage des dates en français (DateFormat 'fr_FR'),
+    initialisation de initializeDateFormatting()
+
+--- ICONES ---
+
+cupertino_icons==1.0.8
+    Pack d'icônes style iOS pour Flutter
+    Utilisé pour : icônes dans les composants Cupertino
+
+--- QUALITÉ DE CODE (dev) ---
+
+flutter_lints==5.0.0
+    Règles d'analyse statique recommandées par l'équipe Flutter
+    Utilisé pour : vérification du style et des bonnes pratiques Dart
+
+====================================================================
+  CONFIGURATION REQUISE
+====================================================================
+Flutter SDK   : >=3.0.0 <4.0.0
+Dart SDK      : inclus avec Flutter
+
+URL API (Android émulateur) : http://10.0.2.2:8000/api/v1
+URL API (Web / iOS)         : http://localhost:8000/api/v1
+
+====================================================================
+  COMMANDES
+====================================================================
+Installation des dépendances  : flutter pub get
+Lancer sur Chrome (web)       : flutter run -d chrome
+Lancer sur émulateur Android  : flutter run -d android
+Analyser le code              : flutter analyze
+Tests                         : flutter test
+Build APK                     : flutter build apk --release
+Build Web                     : flutter build web

@@ -1,0 +1,76 @@
+====================================================================
+  SGHL WEB — Dépendances et Packages
+  Langage : JavaScript  |  Framework : Vue 3 + Vite 6
+====================================================================
+
+--- DÉPENDANCES DE PRODUCTION ---
+
+vue==3.5.17
+    Framework JavaScript progressif (composition API, réactivité)
+
+vue-router==4.5.1
+    Routeur officiel Vue 3 (navigation SPA, routes protégées par rôle)
+
+pinia==3.0.3
+    Store de gestion d'état officiel Vue 3 (remplace Vuex)
+
+axios==1.18.0
+    Client HTTP pour les appels à l'API Django Ninja
+    (intercepteurs pour l'injection du token JWT et le refresh automatique)
+
+tailwindcss==4.3.1
+    Framework CSS utilitaire (design responsive et coloré)
+
+@tailwindcss/vite==4.3.1
+    Plugin Vite pour l'intégration Tailwind CSS v4
+
+@tanstack/vue-query==5.101.0
+    Gestion du cache des requêtes API (fetching, pagination, invalidation)
+
+chart.js==4.5.1
+    Bibliothèque de graphiques (tableaux de bord, statistiques)
+
+vue-chartjs==5.3.3
+    Wrapper Vue 3 pour Chart.js (composants graphiques réactifs)
+
+xlsx==0.18.5
+    Lecture et export de fichiers Excel (rapports, exports de données)
+
+--- DÉPENDANCES DE DÉVELOPPEMENT ---
+
+vite==6.4.0
+    Bundler et serveur de développement ultra-rapide
+
+@vitejs/plugin-vue==5.2.4
+    Plugin Vite pour compiler les composants Vue (.vue)
+
+vite-plugin-vue-devtools==7.7.7
+    Outils de débogage Vue dans le navigateur
+
+eslint==9.29.0
+    Linter JavaScript/Vue (vérification qualité du code)
+
+@eslint/js==9.29.0
+    Configuration ESLint de base pour JavaScript
+
+eslint-plugin-vue==10.2.0
+    Règles ESLint spécifiques aux composants Vue
+
+@vue/eslint-config-prettier==10.2.0
+    Config ESLint compatible avec Prettier (désactive les règles conflictuelles)
+
+prettier==3.5.3
+    Formateur de code automatique (cohérence du style)
+
+globals==16.2.0
+    Définitions des variables globales pour ESLint (browser, node)
+
+====================================================================
+  COMMANDES
+====================================================================
+Installation   : npm install
+Développement  : npm run dev        → http://localhost:5173
+Build prod     : npm run build
+Prévisualiser  : npm run preview
+Lint           : npm run lint
+Format         : npm run format
