@@ -16,15 +16,9 @@ services:
   - type: web
     name: sghl-api
     runtime: python
-    rootDir: sara-hosp-backend-python-django
     plan: free
-    buildCommand: "pip install -r requirements.txt && mkdir -p logs staticfiles && python manage.py collectstatic --noinput && python manage.py migrate"
-    startCommand: >
-      gunicorn config.asgi:application
-      -k uvicorn.workers.UvicornWorker
-      --bind 0.0.0.0:$PORT
-      --workers 2
-      --timeout 120
+    buildCommand: "cd sara-hosp-backend-python-django && pip install -r requirements.txt && mkdir -p logs staticfiles && python manage.py collectstatic --noinput && python manage.py migrate"
+    startCommand: "cd sara-hosp-backend-python-django && gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
     healthCheckPath: /api/v1/health
     envVars:
       - key: DEBUG
